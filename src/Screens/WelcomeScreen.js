@@ -2,7 +2,7 @@ import React from "react";
 import "../scss/WelcomeScreen.scss";
 import ImageOne from "../images/imgOne.jpeg";
 import ImageTwo from "../images/imgTwo.webp";
-import { useState } from "react";
+
 import {
   Modal,
   ModalOverlay,
@@ -20,6 +20,7 @@ import { useDisclosure } from "@chakra-ui/react";
 
 const WelcomeScreen = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className="welcomeContainer">
       <div className="topBar"></div>
