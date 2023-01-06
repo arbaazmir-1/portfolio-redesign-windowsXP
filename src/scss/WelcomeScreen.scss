@@ -1,0 +1,186 @@
+.welcomeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    .topBar{
+        //windows xp startup color 
+        background-color: #003399;
+        width: 100%;
+        height:10vh;
+    }
+    .middleBar{
+        display: flex;
+        height: 70vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: #5F80D5;
+        
+        
+        
+        
+        .logo{
+            width: 45%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 10px;
+           
+        
+           img{
+                width: 20%;
+           }
+           p{
+                font-size: 1.2rem;
+                color: white;
+                
+                padding: 0;
+           }
+        }
+        .line{
+            //add fading effect to both ends 
+            
+
+            width: 1px;
+            height: 50%;
+            background-color: white;
+            margin: 10px;
+            
+        }
+
+       .profiles{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        
+        
+        
+        .profile{
+            display: flex;
+            flex-direction: row;
+            margin: 2% 5%;
+            cursor: pointer !important;
+            transition: 0.5s;   
+         
+            
+            img{
+               width: 80px;
+                height: 80px;
+                border: 2px solid white;
+                border-radius: 4%;
+                
+            }
+            p{
+                font-size: 1.2rem;
+                color: white;
+                margin-left: 10px;
+            }
+           
+
+        }
+       
+       }
+    }
+    .bottomBar{
+        height: 20vh;
+        width: 100%;
+        
+        background-color: #003399;
+       .containerBottom{
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .infoSection{
+            p{
+                color: white;
+                font-size: 1.2rem;
+            }
+        }
+
+
+        .turnOffSection{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+           
+
+
+            i{
+                background-color: red;
+                color: white;
+                padding: 10px;
+                border-radius: 10%;
+                border: 2px solid white;
+
+            }
+            p{
+                color: white;
+                font-size: 1.2rem;
+                margin-left: 10px;
+            }
+        }
+       }
+       
+
+        
+    }
+}
+@media only screen and (max-width: 600px) {
+    .welcomeContainer{
+        .middleBar{
+            .logo{
+                img{
+                    width: 40%;
+                }
+                p{
+                    font-size: 1rem;
+                }
+            }
+            .line{
+                height: 40%;
+            }
+            .profiles{
+                
+                .profile{
+                    img{
+                        width: 60px;
+                        height: 60px;
+                    
+
+                    }
+                    p{
+                    
+
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .bottomBar{
+            .containerBottom{
+                width: 80%;
+                .infoSection{
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+                .turnOffSection{
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
