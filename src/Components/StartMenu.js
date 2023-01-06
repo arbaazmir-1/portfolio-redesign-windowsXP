@@ -1,8 +1,15 @@
 import React from "react";
 import "../scss/StartMenu.scss";
 import ImageTwo from "../images/imgTwo.webp";
+import { useState } from "react";
 
-const StartMenu = () => {
+const StartMenu = ({ logout }) => {
+  const [signOut, setSignOut] = useState(false);
+  const handleSignOut = () => {
+    setSignOut(!signOut);
+    logout(signOut);
+  };
+
   return (
     <>
       <div className="startMenuContainer">
@@ -43,7 +50,7 @@ const StartMenu = () => {
 
         <div className="bottomBar">
           <div className="emptySide"></div>
-          <div className="turnOffSide">
+          <div className="turnOffSide" onClick={handleSignOut}>
             <i className="fas fa-power-off"></i>
             <p>Turn Off Computer</p>
           </div>

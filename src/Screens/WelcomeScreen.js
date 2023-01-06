@@ -2,6 +2,7 @@ import React from "react";
 import "../scss/WelcomeScreen.scss";
 import ImageOne from "../images/imgOne.jpeg";
 import ImageTwo from "../images/imgTwo.webp";
+import { useNavigate } from "react-router-dom";
 
 import {
   Modal,
@@ -20,6 +21,7 @@ import { useDisclosure } from "@chakra-ui/react";
 
 const WelcomeScreen = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigator = useNavigate();
 
   return (
     <div className="welcomeContainer">
@@ -39,7 +41,12 @@ const WelcomeScreen = () => {
             <p>Profile One</p>
           </div>
 
-          <div className="profile">
+          <div
+            className="profile"
+            onClick={() => {
+              navigator("/home");
+            }}
+          >
             <img src={ImageTwo} alt="" />
             <p>Profile Two</p>
           </div>
