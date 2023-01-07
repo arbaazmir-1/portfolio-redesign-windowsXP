@@ -29,10 +29,46 @@ const HomeScreen = () => {
       setShowMenu(false);
     }
   };
+  //future drag and drop
+  // const ref = useRef(null);
+  // const [isDragging, setIsDragging] = useState(false);
+  // const [initialPosition, setInitialPosition] = useState({ x: 0, y: 0 });
+  // const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    console.log(showMenu);
-  }, [showMenu]);
+  // useEffect(() => {
+  //   const handleMouseDown = (event) => {
+  //     setIsDragging(true);
+  //     setInitialPosition({ x: event.clientX, y: event.clientY });
+  //   };
+
+  //   const handleMouseUp = () => {
+  //     setIsDragging(false);
+  //     setInitialPosition({ x: 0, y: 0 });
+  //   };
+
+  //   const handleMouseMove = (event) => {
+  //     if (isDragging) {
+  //       setCurrentPosition({
+  //         x: event.clientX - initialPosition.x,
+  //         y: event.clientY - initialPosition.y,
+  //       });
+  //     }
+  //   };
+
+  //   ref.current.addEventListener("mousedown", handleMouseDown);
+  //   window.addEventListener("mouseup", handleMouseUp);
+  //   window.addEventListener("mousemove", handleMouseMove);
+
+  //   return () => {
+  //     ref.current.removeEventListener("mousedown", handleMouseDown);
+  //     window.removeEventListener("mouseup", handleMouseUp);
+  //     window.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, [isDragging, initialPosition]);
+
+  // const style = {
+  //   transform: `translate(${currentPosition.x}px, ${currentPosition.y}px)`,
+  // };
 
   return (
     <div className="homeScreen">
@@ -46,7 +82,9 @@ const HomeScreen = () => {
       )}
       {logout && <ShutDownModal logout={handleLogout} />}
       {showPomo && <Pomodoro hidePomodoro={hidePomo} />}
+
       {showResume && <Resume hideResume={hideResume} />}
+
       <BottomNavbar onStartClick={handleShowMenu} />
     </div>
   );
