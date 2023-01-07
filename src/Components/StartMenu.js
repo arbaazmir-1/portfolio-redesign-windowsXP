@@ -3,7 +3,7 @@ import "../scss/StartMenu.scss";
 import ImageTwo from "../images/imgTwo.webp";
 import { useState, useRef, useEffect } from "react";
 
-const StartMenu = ({ logout, showMenu, showPomo }) => {
+const StartMenu = ({ logout, showMenu, showPomo, showResume }) => {
   const [signOut, setSignOut] = useState(false);
 
   const ref = useRef(null);
@@ -13,6 +13,10 @@ const StartMenu = ({ logout, showMenu, showPomo }) => {
   };
   const showPomoDoro = () => {
     showPomo(true);
+    showMenu(false);
+  };
+  const showMyResume = () => {
+    showResume(true);
     showMenu(false);
   };
 
@@ -44,7 +48,7 @@ const StartMenu = ({ logout, showMenu, showPomo }) => {
         <div className="middleBar">
           <div className="leftSide">
             <div className="programs">
-              <div className="program">
+              <div className="program" onClick={showMyResume}>
                 <h2>My Resume</h2>
                 <p>Downloadable Version</p>
               </div>
@@ -71,6 +75,7 @@ const StartMenu = ({ logout, showMenu, showPomo }) => {
               <div className="divider"></div>
               <p onClick={showPomoDoro}>Pomodoro</p>
               <p>My Tasks</p>
+              <p>Credits and Copyrights</p>
             </div>
           </div>
         </div>

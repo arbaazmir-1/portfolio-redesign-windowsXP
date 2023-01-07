@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100%;
     position: relative;
     .draggable-component {
