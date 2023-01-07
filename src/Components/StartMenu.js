@@ -1,18 +1,41 @@
 import React from "react";
 import "../scss/StartMenu.scss";
 import ImageTwo from "../images/imgTwo.webp";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const StartMenu = ({ logout }) => {
+const StartMenu = ({ logout, showMenu, showPomo }) => {
   const [signOut, setSignOut] = useState(false);
+
+  const ref = useRef(null);
   const handleSignOut = () => {
     setSignOut(!signOut);
     logout(signOut);
   };
+  const showPomoDoro = () => {
+    showPomo(true);
+    showMenu(false);
+  };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        event.target.tagName !== "P" &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
+        showMenu(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [ref]);
   return (
     <>
-      <div className="startMenuContainer">
+      <div className="startMenuContainer" ref={ref}>
         <div className="topBar">
           <img src={ImageTwo} alt="" />
           <p>Profile Two</p>
@@ -37,13 +60,17 @@ const StartMenu = ({ logout }) => {
               </div>
             </div>
           </div>
-          <div class="divider"></div>
+          <div className="divider"></div>
           <div className="rightSide">
             <div className="programsRight">
               <p>Tidy Hands</p>
               <p>After School</p>
               <p>Lifeline</p>
-              <p>Neutronbuy</p>
+              <p className="last">Neutronbuy</p>
+
+              <div className="divider"></div>
+              <p onClick={showPomoDoro}>Pomodoro</p>
+              <p>My Tasks</p>
             </div>
           </div>
         </div>

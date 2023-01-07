@@ -13,18 +13,18 @@ const LoadingScreen = () => {
   return (
     <>
       <div className="loadingContainer">
-        <div class="window">
-          <div class="logo">
-            <p class="top">Microsoft</p>
-            <p class="mid">
+        <div className="window">
+          <div className="logo">
+            <p className="top">Microsoft</p>
+            <p className="mid">
               Windows<span>XP</span>
             </p>
-            <p class="bottom">Professional</p>
+            <p className="bottom">Professional</p>
           </div>
-          <div class="container">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+          <div className="container">
+            <div className="box"></div>
+            <div className="box"></div>
+            <div className="box"></div>
           </div>
         </div>
       </div>
