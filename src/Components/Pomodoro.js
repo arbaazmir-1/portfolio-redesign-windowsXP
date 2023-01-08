@@ -19,6 +19,8 @@ const Pomodoro = ({ hidePomodoro }) => {
 
   const audioRef = useRef(null);
 
+  const divRef = useRef(null);
+
   const timerStarted = () => {
     setTimerOn(true);
     setTimerPaused(false);
@@ -70,15 +72,22 @@ const Pomodoro = ({ hidePomodoro }) => {
     setTimer(`${timeMinutes}:${timeSeconds < 10 ? "0" : ""}${timeSeconds}`);
   }, [timeMinutes, timeSeconds]);
 
+  useEffect(() => {
+    if (divRef) {
+    }
+  }, [fullScreen]);
+
   return (
     <>
       <div
         className="appContainer"
+        ref={divRef}
         style={
           fullScreen
             ? {
                 width: "100%",
                 height: "100%",
+                margin: "0",
               }
             : {
                 width: "45%",

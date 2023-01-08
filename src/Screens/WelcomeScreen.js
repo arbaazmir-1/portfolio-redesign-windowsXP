@@ -18,11 +18,25 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
+import startup from "../audio/startup.mp3";
+import { useRef, useEffect } from "react";
 
 const WelcomeScreen = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigator = useNavigate();
 
+  const navToHome = () => {
+    navigator("/subloading", { state: { message: "Logging In" } });
+  };
+  const audioRef = useRef(null);
+  audioRef.current = new Audio(startup);
+  audioRef.current.autoPlay = true;
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  }, [audioRef]);
   return (
     <div className="welcomeContainer">
       <div className="topBar"></div>
@@ -44,7 +58,7 @@ const WelcomeScreen = () => {
           <div
             className="profile"
             onClick={() => {
-              navigator("/home");
+              navToHome();
             }}
           >
             <img src={ImageTwo} alt="" />
@@ -55,7 +69,7 @@ const WelcomeScreen = () => {
       <div className="bottomBar">
         <div className="containerBottom">
           <div className="turnOffSection">
-            <i class="fas fa-power-off"></i>
+            <i className="fas fa-power-off"></i>
             <p>Turn Off Computer</p>
           </div>
           <div className="infoSection">

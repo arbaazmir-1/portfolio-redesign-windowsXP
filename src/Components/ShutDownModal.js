@@ -12,10 +12,10 @@ const ShutDownModal = ({ logout }) => {
   const navigator = useNavigate();
 
   const onRestart = () => {
-    navigator("/");
+    navigator("/subloading", { state: { message: "Restarting" } });
   };
   const onLougout = () => {
-    navigator("/welcome");
+    navigator("/subloading", { state: { message: "Logging Out" } });
   };
 
   return (

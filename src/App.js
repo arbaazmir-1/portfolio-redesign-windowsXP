@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WelcomeScreen from "./Screens/WelcomeScreen";
 import LoadingScreen from "./Screens/LoadingScreen";
 import HomeScreen from "./Screens/HomeScreen";
+import SubLoading from "./Screens/SubLoading";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<LoadingScreen />} />
           <Route path="/welcome" element={<WelcomeScreen />} />
           <Route path="/home" element={<HomeScreen />} />
+          <Route path="/subloading" element={<SubLoading />} />
         </Routes>
       </Router>
     </>

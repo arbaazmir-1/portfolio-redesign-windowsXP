@@ -12,20 +12,32 @@ const Resume = ({ hideResume }) => {
   const fullScreenToggle = () => {
     setFullScreen(!fullScreen);
   };
+  const downloadResume = () => {
+    window.open(pdf);
+  };
+
   return (
     <>
       <div
         className="resumeContainer"
         style={
-          fullScreen ? { width: "100%", height: "100%" } : { width: "45%" }
+          fullScreen
+            ? {
+                width: "100%",
+                height: "100%",
+                margin: "0",
+              }
+            : {
+                width: "45%",
+              }
         }
       >
         <div className="topBar">
           <div className="leftSide">
-            <h2>Resume</h2>
+            <h2 style={{ userSelect: "none" }}>Resume</h2>
           </div>
           <div className="rightSide">
-            <i className="fa fa-download"></i>
+            <i className="fa fa-download" onClick={downloadResume}></i>
 
             <i className="fa fa-minus"></i>
             <i

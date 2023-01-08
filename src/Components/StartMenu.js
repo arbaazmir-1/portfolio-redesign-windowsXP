@@ -3,7 +3,7 @@ import "../scss/StartMenu.scss";
 import ImageTwo from "../images/imgTwo.webp";
 import { useState, useRef, useEffect } from "react";
 
-const StartMenu = ({ logout, showMenu, showPomo, showResume }) => {
+const StartMenu = ({ logout, showMenu, showPomo, showResume, showTidy }) => {
   const [signOut, setSignOut] = useState(false);
 
   const ref = useRef(null);
@@ -17,6 +17,10 @@ const StartMenu = ({ logout, showMenu, showPomo, showResume }) => {
   };
   const showMyResume = () => {
     showResume(true);
+    showMenu(false);
+  };
+  const showTidyHands = () => {
+    showTidy(true);
     showMenu(false);
   };
 
@@ -53,21 +57,29 @@ const StartMenu = ({ logout, showMenu, showPomo, showResume }) => {
                 <p>Downloadable Version</p>
               </div>
               <div className="program">
-                <h2>My LinkedIn</h2>
-                <p>My LinkedIn Profile</p>
+                <a
+                  href="https://www.linkedin.com/in/abdullah-ibn-shahin/"
+                  target="_blank"
+                >
+                  <h2>My LinkedIn</h2>
+
+                  <p>My LinkedIn Profile</p>
+                </a>
               </div>
               <div className="divider"></div>
               <div className="program">
-                <h2>My Github</h2>
+                <a href="https://www.github.com/arbaazmir-1" target="_blank">
+                  <h2>My Github</h2>
 
-                <p>My Github Profile</p>
+                  <p>My Github Profile</p>
+                </a>
               </div>
             </div>
           </div>
           <div className="divider"></div>
           <div className="rightSide">
             <div className="programsRight">
-              <p>Tidy Hands</p>
+              <p onClick={showTidyHands}>Tidy Hands</p>
               <p>After School</p>
               <p>Lifeline</p>
               <p className="last">Neutronbuy</p>

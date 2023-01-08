@@ -5,10 +5,14 @@
     background-repeat: no-repeat;
     height: calc(100vh - 50px);
     width: 100%;
-    position: relative;
-    .draggable-component {
-        position: absolute;
-      }
+    display: flex;
+    align-items: flex-start;
+    
+    flex-wrap: wrap;
+  
+      
+      
+    
 }
 
 
