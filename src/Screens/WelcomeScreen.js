@@ -62,7 +62,7 @@ const WelcomeScreen = () => {
             }}
           >
             <img src={ImageTwo} alt="" />
-            <p>Profile Two</p>
+            <p>Public Profile</p>
           </div>
         </div>
       </div>
