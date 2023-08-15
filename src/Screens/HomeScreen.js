@@ -42,14 +42,14 @@ const HomeScreen = () => {
           logout={handleLogout}
           showMenu={handleShowMenu}
           showPomo={hidePomo}
-          showResume={hideResume}
+
           showTidy={hideTidy}
         />
       )}
       {logout && <ShutDownModal logout={handleLogout} />}
       {showPomo && <Pomodoro hidePomodoro={hidePomo} />}
 
-      {showResume && <Resume hideResume={hideResume} />}
+      
       {showTidy && <TidyHands hideTidy={hideTidy} />}
 
       <BottomNavbar onStartClick={handleShowMenu} />
