@@ -52,10 +52,7 @@ const StartMenu = ({ logout, showMenu, showPomo, showResume, showTidy }) => {
         <div className="middleBar">
           <div className="leftSide">
             <div className="programs">
-              <div className="program" onClick={showMyResume}>
-                <h2>My Resume</h2>
-                <p>Downloadable Version</p>
-              </div>
+              
               <div className="program">
                 <a
                   href="https://www.linkedin.com/in/abdullah-ibn-shahin/"

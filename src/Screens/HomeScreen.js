@@ -5,7 +5,6 @@ import { useState, useRef } from "react";
 import StartMenu from "../Components/StartMenu";
 import ShutDownModal from "../Components/ShutDownModal";
 import Pomodoro from "../Components/Pomodoro";
-import Resume from "../Components/Resume";
 import TidyHands from "../Components/TidyHands";
 const HomeScreen = () => {
   const [showMenu, setShowMenu] = useState(false);
